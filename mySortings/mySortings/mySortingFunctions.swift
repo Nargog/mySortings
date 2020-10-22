@@ -7,13 +7,53 @@
 
 import Foundation
 
+// Selection sort. Letar hela tiden efter öägsta värde https://en.wikipedia.org/wiki/Selection_sort
+func selectionSort(inArray:[Int])->[Int]{
+    var unsorted=inArray
+    var sorted:[Int] = []
+    
+    while unsorted.count > 1 {
+    
+    var minstaPlats = 0
+    
+    for a in 1...unsorted.count-1{
+        if unsorted[minstaPlats]>unsorted[a]{
+            minstaPlats = a
+        }
+        
+    }
+        sorted.append(unsorted.remove(at: minstaPlats))
+}
+   sorted.append(contentsOf: unsorted) //det blir en kvar i array unsorted :(
+    return sorted
+}
+
+// Oj, det blev en mer avancerad variant jag tänkt mig https://en.wikipedia.org/wiki/Bubble_sort
 
 
+func bubbleSort(ubba:[Int])->[Int]{
+    var myArray = ubba
+    var unsorted:Bool = true
+    
+    while unsorted{
+       // print("kallad")
+        unsorted = false //vi förutsätter att iteration är sorterad
+        for a in 0...myArray.count-2 {
+            if myArray[a]>myArray[a+1]{
+                myArray.swapAt(a, a+1)
+                unsorted = true //nä den var osorterad. gör en iteration till
+            }
+            
+        }
+        
+    }
+   return myArray
+}
 
 
 //  how to call  ******   let apa = sort(indata: instring)
 
-func sort(indata:[Int])-> [Int]{
+func quickSort(indata:[Int])-> [Int]{
     print("kallad")
     var lower=[Int](),higher=[Int]()
     
@@ -41,12 +81,12 @@ func sort(indata:[Int])-> [Int]{
     
     // Kalla rekursivt då det finns en osorterad array under pivå, egentligen vet vi inte om den är sorterad eller ej
     if lower.count > 1 {
-        lower = sort(indata: lower)
+        lower = quickSort(indata: lower)
     }
     // Kalla rekursivt då det finns en osorterad array över pivå, egentligen vet vi inte om den är sorterad eller ej
 
     if higher.count > 1 {
-        higher = sort(indata: higher)
+        higher = quickSort(indata: higher)
     }
     
     // Addera lägre än pivå + pivå + högre än pivå

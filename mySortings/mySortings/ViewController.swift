@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     @IBAction func btnSort(_ sender: Any) {
         
         
-        let apa = sort(indata: inDataIntegerArray)
+        let apa = quickSort(indata: inDataIntegerArray)
         
         var svar = "Sorterad: "
         for siffra in apa {
