@@ -7,6 +7,16 @@
 
 import Foundation
 
+// Merge sort !!!
+// https://reactgo.com/merge-sort-algorithm-javascript/
+
+// inte inlagd än. Smart algoritm med rekursion
+
+
+
+
+
+
 /* insertion sort: function insSort
  
  i ← 1
@@ -25,9 +35,12 @@ import Foundation
 
 
 func insSort (A_in:[Int])-> [Int]{
+    //Lokala variabler
     var i = 1
     var j = 0
     var A = A_in
+    
+    
     while i < A.count {
         j = i
         while j > 0 && A[j-1] > A[j] {
@@ -83,7 +96,7 @@ func insertionSort(inArray:[Int])->[Int]{
     }
     
 
-   sorted.append(contentsOf: unsorted) //det blir en kvar i array unsorted :(
+   sorted.append(contentsOf: unsorted) //det blir en kvar i array unsorted för att undvika overflow :( Kanske kunde lösa det genom att sätta repeat ... while ()
     
     
     return sorted
