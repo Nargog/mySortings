@@ -4,5 +4,9 @@ My sorting technics  https://en.wikipedia.org/wiki/Sorting_algorithm#Simple_sort
 implemented  quicksort
 https://en.wikipedia.org/wiki/Quicksort
 .
-.
+implemented insertionsort
+
+implemented bubblesort
+
+Started on mergesort
 .
